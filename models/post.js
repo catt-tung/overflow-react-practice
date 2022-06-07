@@ -34,7 +34,7 @@ const postSchema = new Schema({
     type: Boolean,
     default: false
   },
-  added_by:  { 
+  added_by: { 
     type: mongoose.Schema.Types.ObjectId, ref: 'Profile'
   },
   comments: [commentSchema]
