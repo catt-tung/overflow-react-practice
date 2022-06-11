@@ -96,6 +96,18 @@ const markCommentAsSolution = async (req, res) => {
   }
 }
 
+const deleteComment = async(req, res)=> {
+  try {
+    const post = await Post.findById(req.params.postId)
+    post.comments.remove({_id: req.params.commentId})
+
+    await post.save()
+    return res.status(204).end()
+  }catch(err){
+    res.status(500).json(err)
+  }
+}
+
 export {
   create,
   index,
@@ -104,4 +116,5 @@ export {
   deletePost as delete,
   createComment,
   markCommentAsSolution,
+  deleteComment,
 }
