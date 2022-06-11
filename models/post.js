@@ -37,7 +37,7 @@ const postSchema = new Schema({
   added_by: { 
     type: mongoose.Schema.Types.ObjectId, ref: 'Profile'
   },
-  comments: [commentSchema]
+  comments: [commentSchema],
 }, {timestamps: true})
 
 const Post = mongoose.model('Post', postSchema)
