@@ -64,10 +64,24 @@ const deletePost = async (req, res) => {
   }
 }
 
+const createComment = async (req, res) => {
+  try {
+    req.body.commenter = req.user.profile
+    const post = await Post.findById(req.params)
+    post.comments.push(req.body)
+    await post.save()
+    const newComment = post.comments[post.comments.length -1]
+    return res.status(201).json(newComment)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+}
+
 export {
   create,
   index,
   show,
   update,
   deletePost as delete,
+  createComment,
 }
