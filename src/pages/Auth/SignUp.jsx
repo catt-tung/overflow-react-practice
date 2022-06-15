@@ -5,6 +5,7 @@ import '../../styles/Auth.css'
 import cat from '../../assets/avatars/cat.png'
 
 //Services
+import { signup } from '../../services/authService'
 
 const SignUp = (props) => {
   return (
