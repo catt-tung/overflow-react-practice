@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../../styles/Auth.css'
 
 //Assets
@@ -10,6 +11,7 @@ import { signup } from '../../services/authService'
 
 
 const SignUp = (props) => {
+  const navigate = useNavigate()
   //state for tracking errors
   const [msg, setMsg] = useState('')
 
@@ -29,7 +31,9 @@ const SignUp = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log('it works')
+      await signup(formData)
+      props.handleSignupOrLogin()
+      navigate('/posts')
     } catch (error) {
       setMsg(error.message)
     }
@@ -82,7 +86,7 @@ const SignUp = (props) => {
               type="submit"
             >SIGN UP</button>
           </form>
-          
+
           <div className="title-container">
             <h1>Create an Account</h1>
 						<h3>Social media for developers</h3>
