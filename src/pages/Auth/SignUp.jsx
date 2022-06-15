@@ -48,6 +48,8 @@ const SignUp = (props) => {
               type="text"
               autoComplete="off"
               placeholder="Username"
+              onChange={handleChange}
+              value={formData.name}
             />
             <input
               required
@@ -55,6 +57,8 @@ const SignUp = (props) => {
               type="email"
               autoComplete="off"
               placeholder="Email"
+              onChange={handleChange}
+              value={formData.email}
             />
             <input
               required
@@ -62,6 +66,8 @@ const SignUp = (props) => {
               type="password"
               autoComplete="off"
               placeholder="Password"
+              onChange={handleChange}
+              value={formData.password}
             />
 
             <button
@@ -76,6 +82,7 @@ const SignUp = (props) => {
               type="submit"
             >SIGN UP</button>
           </form>
+          
           <div className="title-container">
             <h1>Create an Account</h1>
 						<h3>Social media for developers</h3>
