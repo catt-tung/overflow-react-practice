@@ -26,6 +26,15 @@ const SignUp = (props) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      console.log('it works')
+    } catch (error) {
+      setMsg(error.message)
+    }
+  }
+
   return (
     <div className="signup-page">
 
