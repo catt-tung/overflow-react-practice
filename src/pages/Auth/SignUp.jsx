@@ -25,6 +25,41 @@ const SignUp = (props) => {
       <div className='left-container'>
 
         <div className='form-container'>
+          <form className="register-form">
+            <input
+              required
+              name="name"
+              type="text"
+              autoComplete="off"
+              placeholder="Username"
+            />
+            <input
+              required
+              name="email"
+              type="email"
+              autoComplete="off"
+              placeholder="Email"
+            />
+            <input
+              required
+              name="password"
+              type="password"
+              autoComplete="off"
+              placeholder="Password"
+            />
+
+            <button
+              autoComplete="off"
+              id="avatar-button"
+              type="button"
+            >Select Avatar</button>
+
+            <button
+              autoComplete="off"
+              id="submit-button"
+              type="submit"
+            >SIGN UP</button>
+          </form>
           <div className="title-container">
             <h1>Create an Account</h1>
 						<h3>Social media for developers</h3>
