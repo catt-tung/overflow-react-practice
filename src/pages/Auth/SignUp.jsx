@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../styles/Auth.css'
 
 //Assets
@@ -6,6 +6,17 @@ import cat from '../../assets/avatars/cat.png'
 
 //Services
 import { signup } from '../../services/authService'
+
+//state for tracking errors
+const [msg, setMsg] = useState('')
+
+//form state
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  password: '',
+  avatar: cat
+})
 
 const SignUp = (props) => {
   return (
