@@ -69,7 +69,7 @@ const SignUp = (props) => {
               : <h3>Social Media for Developers</h3>
             }
           </div>
-          <form className="register-form">
+          <form className="register-form" onSubmit={handleSubmit}>
             <input
               required
               name="name"
@@ -112,10 +112,6 @@ const SignUp = (props) => {
             >SIGN UP</button>
           </form>
 
-          <div className="title-container">
-            <h1>Create an Account</h1>
-						<h3>Social media for developers</h3>
-          </div>
           <form className="register-form">
             <p>Already have an account?</p>
             <Link className="redirect-link" to="/signin">
