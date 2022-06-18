@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import '../../styles/Auth.css'
 
 //Assets
@@ -57,8 +57,14 @@ const SignUp = (props) => {
       }
 
       <div className='left-container'>
-
         <div className='form-container'>
+          <div className="title-container">
+            <h1>Create an Account</h1>
+            {msg
+              ? <h3>{msg}</h3>
+              : <h3>Social Media for Developers</h3>
+            }
+          </div>
           <form className="register-form">
             <input
               required
@@ -107,7 +113,10 @@ const SignUp = (props) => {
 						<h3>Social media for developers</h3>
           </div>
           <form className="register-form">
-            Inputs Here
+            <p>Already have an account?</p>
+            <Link className="redirect-link" to="/signin">
+              Sign In
+            </Link>
           </form>
         </div>
 
