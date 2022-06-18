@@ -5,9 +5,13 @@ import '../../styles/Auth.css'
 //Assets
 import cat from '../../assets/avatars/cat.png'
 import AvatarSelection from './AvatarSelection'
+import coder from '../../assets/animation/coder.json'
 
 //Services
 import { signup } from '../../services/authService'
+
+//components
+import Animation from '../../components/misc/Animation'
 
 
 
@@ -123,7 +127,7 @@ const SignUp = (props) => {
       </div>
 
       <div className="right-container">
-        Animation Here
+        <Animation animData={coder}></Animation>
       </div>
 
     </div>
