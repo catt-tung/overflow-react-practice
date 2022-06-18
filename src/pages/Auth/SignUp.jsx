@@ -4,6 +4,7 @@ import '../../styles/Auth.css'
 
 //Assets
 import cat from '../../assets/avatars/cat.png'
+import AvatarSelection from './AvatarSelection'
 
 //Services
 import { signup } from '../../services/authService'
@@ -15,6 +16,8 @@ const SignUp = (props) => {
   //state for tracking errors
   const [msg, setMsg] = useState('')
 
+  const [popup, setPopup] = useState(false)
+
   //form state
   const [formData, setFormData] = useState({
     name: '',
@@ -22,6 +25,10 @@ const SignUp = (props) => {
     password: '',
     avatar: cat
   })
+  
+  const handlePopup = () => {
+    setPopup(!popup)
+  }
 
   const handleChange = (e) => {
     setMsg('')
@@ -41,6 +48,13 @@ const SignUp = (props) => {
 
   return (
     <div className="signup-page">
+      {popup &&
+        <AvatarSelection 
+        formData={formData}
+        handleChange={handleChange}
+        handlePopup={handlePopup}
+        />
+      }
 
       <div className='left-container'>
 
@@ -78,6 +92,7 @@ const SignUp = (props) => {
               autoComplete="off"
               id="avatar-button"
               type="button"
+              onClick={handlePopup}
             >Select Avatar</button>
 
             <button
