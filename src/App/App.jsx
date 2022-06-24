@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav/Nav'
 import SignUp from '../pages/Auth/SignUp'
 import SignIn from '../pages/Auth/SignIn'
+import PostList from '../pages/PostList'
 
 //Services
 import { getUser, logout } from '../services/authService'
@@ -42,7 +43,7 @@ const App = () => {
         />
 
         <Route path='/posts'
-        element={<h1>Posts</h1>}
+        element={<PostList />}
         />
 
       </Routes>
