@@ -5,6 +5,7 @@ import { getAllPosts } from "../services/postService";
 
 //Components
 import PostCard from "../components/Post/PostCard";
+import Header from "../components/misc/Header";
 
 const PostList = () => {
   const [posts, setPosts] = useState([])
@@ -20,7 +21,7 @@ const PostList = () => {
 
   return (
     <div className="layout">
-      <h1>Posts!!</h1>
+      <Header />
       {posts?.map((post) => (
         <PostCard 
           post={post}
