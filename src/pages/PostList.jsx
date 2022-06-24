@@ -11,14 +11,15 @@ const PostList = () => {
   useEffect(() => {
     const fetchAllPosts = async () => {
       const postData = await getAllPosts()
-      console.log(postData)
+      setPosts(postData)
     }
     fetchAllPosts()
+    return () => { setPosts([]) }
   }, [])
 
   return (
     <div className="layout">
-      <h1>Posts!</h1>
+      <h1>Posts!!</h1>
     </div>
   );
 }
