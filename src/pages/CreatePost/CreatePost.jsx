@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../styles/Create.css'
 
@@ -36,8 +36,19 @@ const CreatePost = (props) => {
 
   return (
     <div className="layout">
-      <Header />
-      <PostForm />
+      <Header title='Create Post' />
+      <PostForm 
+        codeblock={codeblock}
+        setCodeblock={setCodeblock}
+
+        toggleCode={toggleCode}
+        setToggleCode={setToggleCode}
+
+        question={question}
+        setQuestion={setQuestion}
+
+        handleCreatePost={handleCreatePost}
+      />
     </div>
   );
 }
