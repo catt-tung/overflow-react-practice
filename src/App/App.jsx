@@ -47,6 +47,10 @@ const App = () => {
         element={<PostList />}
         />
 
+        <Route path='/new'
+          element={user ? <CreatePost user={user} /> : <Navigate to="/signin" />}
+        />
+
       </Routes>
     </div>
   )
