@@ -13,6 +13,18 @@ import { createPost } from "../../services/postService";
 
 const CreatePost = (props) => {
   const navigate = useNavigate()
+
+  const handleCreatePost = async (e) => {
+    e.preventDefault()
+    try {
+      const newPost = await createPost(formData)
+      console.log(newPost)
+      navigate('/posts')
+    } catch (error) {
+      throw error
+    }
+  }
+
   return (
     <div className="layout">
       <Header />
