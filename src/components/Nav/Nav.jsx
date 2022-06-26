@@ -9,12 +9,13 @@ const Nav = (props) => {
       <NavLink id="logo" to='/posts'><img src={LogoDesktop} alt="disco-ball" /></NavLink>
       {props.user
       ? <>
-        <NavLink to="/" onClick={props.handleLogout}>Logout</NavLink>
+          <NavLink to="/" onClick={props.handleLogout}>Logout</NavLink>
+          <NavLink to='/new'>New Post</NavLink>
         </>
         : <>
-        <NavLink to='/signup'>Sign Up</NavLink>
-        <NavLink to='/signin'>Sign In</NavLink>
-          </>
+          <NavLink to='/signup'>Sign Up</NavLink>
+          <NavLink to='/signin'>Sign In</NavLink>
+        </>
       }
     </nav>
   )
