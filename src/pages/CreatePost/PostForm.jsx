@@ -1,5 +1,6 @@
 import React from "react";
 import '../../styles/Create.css'
+import CodeEditor from '../../components/Code/CodeEditor'
 
 const PostForm = (props) => {
   return (
@@ -27,6 +28,14 @@ const PostForm = (props) => {
           onClick={() => props.setTogglecode(!props.toggleCode)}
         >+</button>
       </div>
+
+      {props.toggleCode &&
+        <CodeEditor
+          codeblock={props.codeblock}
+          setCodeBlock={props.setCodeBlock}
+        ></CodeEditor>
+
+      }
 
       <div className="border"></div>
 
