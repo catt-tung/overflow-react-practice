@@ -1,9 +1,12 @@
 import React from "react";
+import PostActions from "./PostActions";
 
 const PostCard = (props) => {
   return (
     <div className="post-card">
-      <div className="card-header"></div>
+      <div className="card-header">
+        <PostActions {...props}/>
+      </div>
       <div className="question-container">
         <p>{props.post.question}</p>
       </div>
