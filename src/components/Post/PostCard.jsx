@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PostActions from "./PostActions";
 import UserCard from "../misc/UserCard";
 import Codeblock from '../Code/Codeblock'
@@ -19,7 +20,9 @@ const PostCard = (props) => {
           <Codeblock codeblock={props.post.codeblock} />
         }
       </div>
-      <div className="comment-link"></div>
+      <div className="comment-link">
+        <Link to={`/posts/${props.post._id}`}>View Comments</Link>
+      </div>
     </div>
   );
 }
