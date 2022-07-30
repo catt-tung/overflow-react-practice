@@ -12,7 +12,7 @@ const PostCard = (props) => {
         <PostActions {...props}/>
       </div>
       <div className="question-container">
-        <p>{props.post.question}</p>
+        <p>{props.post.is_resolved && '[RESOLVED]'}{props.post.question}</p>
       </div>
 
       <div className="code-container">
