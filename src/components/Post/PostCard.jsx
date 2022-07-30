@@ -15,7 +15,9 @@ const PostCard = (props) => {
       </div>
 
       <div className="code-container">
-        <p>{props.post.codeblock}</p>
+        {props.post.codeblock &&
+          <Codeblock codeblock={props.post.codeblock} />
+        }
       </div>
       <div className="comment-link"></div>
     </div>
