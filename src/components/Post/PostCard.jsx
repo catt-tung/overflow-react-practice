@@ -7,6 +7,7 @@ const PostCard = (props) => {
   return (
     <div className="post-card">
       <div className="card-header">
+        <UserCard profile={props.post.added_by} />
         <PostActions {...props}/>
       </div>
       <div className="question-container">
