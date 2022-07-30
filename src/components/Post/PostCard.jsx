@@ -1,5 +1,7 @@
 import React from "react";
 import PostActions from "./PostActions";
+import UserCard from "../misc/UserCard";
+import Codeblock from '../Code/Codeblock'
 
 const PostCard = (props) => {
   return (
