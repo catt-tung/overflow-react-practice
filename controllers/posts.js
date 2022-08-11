@@ -80,6 +80,8 @@ const createComment = async (req, res) => {
 const markCommentAsSolution = async (req, res) => {
   try {
     const updatedPost = await Post.findById(req.params.postId)
+      .populate('added_by')
+      .populate('comments.commeter')
 
     const idx = updatedPost.comments.findIndex(
       (comment) => comment._id.equals(req.params.commentId)
