@@ -71,6 +71,9 @@ const createComment = async (req, res) => {
     post.comments.push(req.body)
     await post.save()
     const newComment = post.comments[post.comments.length - 1]
+    
+    const profile = await Profile.findById(req.user.profile)
+    newComment.commeter = profile
     return res.status(201).json(newComment)
   } catch (err) {
     res.status(500).json(err)
