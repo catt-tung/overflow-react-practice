@@ -45,7 +45,7 @@ const update = async (req, res) =>{
       req.params.id,
       updateData,
       { new: true }
-    )
+    ).populate('added_by')
     return res.status(200).json(updatedPost)
   } catch (err) {
     return res.status(500).json(err)
